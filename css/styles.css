@@ -583,13 +583,6 @@ body {
     padding: 0 5px;
 }
 
-.pantalla {
-    margin-top: 40px;
-}
-.servicios-grid {
-    margin-top: 20px
-}
-
 
 @media (max-width: 480px) {
     .pantalla {
