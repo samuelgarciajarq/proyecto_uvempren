@@ -585,11 +585,12 @@ body {
 
 
 @media (max-width: 480px) {
+    .pantalla {
+        margin-top: 50px;
+    }
     .servicios-grid {
         gap: 20px;
         padding: 10px;
-
-        margin-top: 50px;
     }
     
     .servicio-card {
