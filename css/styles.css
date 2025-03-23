@@ -634,7 +634,6 @@ body {
 /* Mejora la animación hover */
 .servicio-card:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Añade una microinteracción al soltar */
