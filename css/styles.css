@@ -584,3 +584,18 @@ body {
 }
 
 
+@media (max-width: 480px) {
+    .icono {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+    
+    .servicio-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .servicio-card p {
+        font-size: 1rem;
+    }
+}
