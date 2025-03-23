@@ -611,3 +611,66 @@ body {
         font-size: 1rem;
     }
 }
+
+
+
+
+
+
+
+
+/* Elimina el highlight azul en móviles */
+.servicio-card {
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.3s ease;
+}
+
+/* Efecto al presionar */
+.servicio-card:active {
+    transform: scale(0.97) translateY(2px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mejora la animación hover */
+.servicio-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Añade una microinteracción al soltar */
+.servicio-card {
+    position: relative;
+}
+
+.servicio-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 15px rgba(70, 130, 180, 0.4);
+}
+
+.servicio-card:active::after {
+    opacity: 1;
+}
+
+/* Ajusta para móviles */
+@media (max-width: 480px) {
+    .servicio-card {
+        transition-duration: 0.2s;
+    }
+    
+    .servicio-card:active {
+        transform: scale(0.95);
+    }
+    
+    .servicio-card:hover {
+        transform: none; /* Desactiva hover en móviles */
+    }
+}

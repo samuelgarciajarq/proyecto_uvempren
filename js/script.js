@@ -82,3 +82,11 @@ document.querySelectorAll('.btn2').forEach(button => {
         });
     });
 });
+
+
+
+
+
+if ('ontouchstart' in window) {
+    document.body.classList.add('touch-device');
+}
