@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multidisciplinary APProach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/icono.png">
+</head>
+
+<body>
+    <header class="header">
+        <h1>APProach</h1>
+    </header>
+    <!--
+        <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="#">Fisioterapia</a>
+        <a href="#">Psicología</a>
+        <a href="#">Nutrición</a>
+    -->
+    </nav>
+    <div class="menu-toggle">
+        <section id="inicio" class="pantalla">
+            <div class="date-picker">
+                <button class="nav-button" id="prev-day">&lt;</button>
+                <div class="date-container">
+                    <span id="current-date" style="font-size: 24px;"></span>
+                    <input type="date" id="date-input" hidden>
+                </div>
+                <button class="nav-button" id="next-day">&gt;</button>
+            </div>
+            <button class="btn" id="open-calendar">
+                <p style="margin: 3px 0px 3px 0px;">Abrir calendario</p>
+                &nbsp
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"
+                    class="svg-icon svg-calendar">
+                    <g stroke-width="2" stroke-linecap="round" stroke="#fff">
+                        <rect y="5" x="4" width="16" rx="2" height="16"></rect>
+                        <path d="m8 3v4"></path>
+                        <path d="m16 3v4"></path>
+                        <path d="m4 11h16"></path>
+                    </g>
+                </svg>
+            </button>
+            <p style="margin: 50px 0px 5px 0px; font-size: 20px;">Tus ejercicios para el día de hoy son...</p>
+            <!--<button class="btn">Ver Ejercicios</button>-->
+        </section>
+        <section id="ejercicios" class="pantalla">
+            <!--<h2>Ejercicios de Fisioterapia</h2>-->
+            <div class="ejercicio-container">
+                <div class="ejercicio">
+                    <h3>Nombre del ejercicio 1</h3>
+                    <div class="contenido-ejercicio">
+                        <div class="image-container">
+                            <img src="img/Ejercicio1.gif" alt="Ejercicio 1">
+                            <div class="checkbox-overlay">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="menu-trigger">
+                                    <svg viewBox="0 0 64 64" height="2em" width="2em">
+                                        <path
+                                            d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                                            pathLength="575.0541381835938" class="path"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+                        <p>Descripción del ejercicio 1.</p>
+                    </div>
+                    <div class="menu-desplegable">
+                        <h4 style="margin-top: 0px; margin-bottom: 4px;">Escala de esfuerzo</h4>
+                        <div class="borg-labels" style="margin: 0px">
+                            <label style="align-self: left; font-size: 16px">Muy ligero</label>
+                            <label style="align-self: right; font-size: 16px">Extremo</label>
+                        </div>
+                        <div class="borg-scale">
+                            <div class="borg-item" style="background-color:rgb(110, 190, 110)" data-value="1">1</div>
+                            <div class="borg-item" style="background-color:rgb(160, 220, 100)" data-value="2">2</div>
+                            <div class="borg-item" style="background-color:rgb(250, 220, 50)" data-value="3">3</div>
+                            <div class="borg-item" style="background-color:rgb(240, 150, 70)" data-value="4">4</div>
+                            <div class="borg-item" style="background-color:rgb(230, 90, 90)" data-value="5">5</div>
+                        </div>
+                        <div>
+                            <h4 style="margin-top: 25px; margin-bottom: 0px;">Comentario adicional</h4>
+                            <div class="borg-labels" style="justify-content: center;">
+                                <label style="font-size: 16px; margin-bottom: 2px;">¿Tienes algún comentario o duda
+                                    sobre este ejercicio?</label>
+                            </div>
+                            <textarea class="comentario" name="comentario" rows="4" cols="25"></textarea>
+                        </div>
+                        <div style="justify-content: center;">
+                            <button class="btn2">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ejercicio-container">
+                <div class="ejercicio">
+                    <h3>Nombre del ejercicio 2</h3>
+                    <div class="contenido-ejercicio">
+                        <div class="image-container">
+                            <img src="img/Ejercicio2.gif" alt="Ejercicio 2">
+                            <div class="checkbox-overlay">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="menu-trigger">
+                                    <svg viewBox="0 0 64 64" height="2em" width="2em">
+                                        <path
+                                            d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                                            pathLength="575.0541381835938" class="path"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+                        <p>Descripción del ejercicio 2.</p>
+                    </div>
+                    <div class="menu-desplegable">
+                        <h4 style="margin-top: 0px; margin-bottom: 0px;">Escala de esfuerzo</h4>
+                        <div class="borg-labels" style="margin: 0px">
+                            <label style="align-self: left; font-size: 16px">Muy ligero</label>
+                            <label style="align-self: right; font-size: 16px">Extremo</label>
+                        </div>
+                        <div class="borg-scale">
+                            <div class="borg-item" style="background-color:rgb(110, 190, 110)" data-value="1">1</div>
+                            <div class="borg-item" style="background-color:rgb(160, 220, 100)" data-value="2">2</div>
+                            <div class="borg-item" style="background-color:rgb(250, 220, 50)" data-value="3">3</div>
+                            <div class="borg-item" style="background-color:rgb(240, 150, 70)" data-value="4">4</div>
+                            <div class="borg-item" style="background-color:rgb(230, 90, 90)" data-value="5">5</div>
+                        </div>
+                        <div>
+                            <h4 style="margin-top: 25px; margin-bottom: 0px;">Comentario adicional</h4>
+                            <div class="borg-labels" style="justify-content: center;">
+                                <label style="font-size: 16px; margin-bottom: 2px;">¿Tienes algún comentario o duda
+                                    sobre este ejercicio?</label>
+                            </div>
+                            <textarea class="comentario" name="comentario" rows="4" cols="25"></textarea>
+                        </div>
+                        <div style="justify-content: center;">
+                            <button class="btn2">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ejercicio-container">
+                <div class="ejercicio">
+                    <h3>Nombre del ejercicio 3</h3>
+                    <div class="contenido-ejercicio">
+                        <div class="image-container">
+                            <img src="img/Ejercicio3.gif" alt="Ejercicio 3">
+                            <div class="checkbox-overlay">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="menu-trigger">
+                                    <svg viewBox="0 0 64 64" height="2em" width="2em">
+                                        <path
+                                            d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                                            pathLength="575.0541381835938" class="path"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+                        <p>Descripción del ejercicio 3.</p>
+                    </div>
+                    <div class="menu-desplegable">
+                        <h4 style="margin-top: 0px; margin-bottom: 0px;">Escala de esfuerzo</h4>
+                        <div class="borg-labels" style="margin: 0px">
+                            <label style="align-self: left; font-size: 16px">Muy ligero</label>
+                            <label style="align-self: right; font-size: 16px">Extremo</label>
+                        </div>
+                        <div class="borg-scale">
+                            <div class="borg-item" style="background-color:rgb(110, 190, 110)" data-value="1">1</div>
+                            <div class="borg-item" style="background-color:rgb(160, 220, 100)" data-value="2">2</div>
+                            <div class="borg-item" style="background-color:rgb(250, 220, 50)" data-value="3">3</div>
+                            <div class="borg-item" style="background-color:rgb(240, 150, 70)" data-value="4">4</div>
+                            <div class="borg-item" style="background-color:rgb(230, 90, 90)" data-value="5">5</div>
+                        </div>
+                        <div>
+                            <h4 style="margin-top: 25px; margin-bottom: 0px;">Comentario adicional</h4>
+                            <div class="borg-labels" style="justify-content: center;">
+                                <label style="font-size: 16px; margin-bottom: 2px;">¿Tienes algún comentario o duda
+                                    sobre este ejercicio?</label>
+                            </div>
+                            <textarea class="comentario" name="comentario" rows="4" cols="25"></textarea>
+                        </div>
+                        <div style="justify-content: center;">
+                            <button class="btn2">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ejercicio-container">
+                <div class="ejercicio">
+                    <h3>Nombre del ejercicio 4</h3>
+                    <div class="contenido-ejercicio">
+                        <div class="image-container">
+                            <img src="img/Ejercicio4.gif" alt="Ejercicio 4">
+                            <div class="checkbox-overlay">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="menu-trigger">
+                                    <svg viewBox="0 0 64 64" height="2em" width="2em">
+                                        <path
+                                            d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                                            pathLength="575.0541381835938" class="path"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+                        <p>Descripción del ejercicio 4.</p>
+                    </div>
+                    <div class="menu-desplegable">
+                        <h4 style="margin-top: 0px; margin-bottom: 0px;">Escala de esfuerzo</h4>
+                        <div class="borg-labels" style="margin: 0px">
+                            <label style="align-self: left; font-size: 16px">Muy ligero</label>
+                            <label style="align-self: right; font-size: 16px">Extremo</label>
+                        </div>
+                        <div class="borg-scale">
+                            <div class="borg-item" style="background-color:rgb(110, 190, 110)" data-value="1">1</div>
+                            <div class="borg-item" style="background-color:rgb(160, 220, 100)" data-value="2">2</div>
+                            <div class="borg-item" style="background-color:rgb(250, 220, 50)" data-value="3">3</div>
+                            <div class="borg-item" style="background-color:rgb(240, 150, 70)" data-value="4">4</div>
+                            <div class="borg-item" style="background-color:rgb(230, 90, 90)" data-value="5">5</div>
+                        </div>
+                        <div>
+                            <h4 style="margin-top: 25px; margin-bottom: 0px;">Comentario adicional</h4>
+                            <div class="borg-labels" style="justify-content: center;">
+                                <label style="font-size: 16px; margin-bottom: 2px;">¿Tienes algún comentario o duda
+                                    sobre este ejercicio?</label>
+                            </div>
+                            <textarea class="comentario" name="comentario" rows="4" cols="25"></textarea>
+                        </div>
+                        <div style="justify-content: center;">
+                            <button class="btn2">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,616 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: aliceblue;
+    color: #333;
+    font-size: large;
+    overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+.header {
+    background-color: steelblue;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 15px; /* Añade espacio a los lados */
+    -webkit-overflow-scrolling: touch; /* Mejor scroll en móvil */
+}
+
+.menu a {
+    text-decoration: none;
+    color: steelblue;
+    font-weight: 600;
+}
+
+.pantalla {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.ejercicio {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.ejercicio img {
+    width: 425px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.ejercicio-container {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 450px;
+    width: 90%;
+    margin: 0 auto 20px;
+    padding: 0 10px;
+}
+
+/* Media query para tablets y pantallas mayores */
+@media (min-width: 768px) {
+    .menu {
+        justify-content: center;
+    }
+
+    .menu a {
+        margin: 0 15px;
+    }
+
+    .ejercicio {
+        display: inline-block;
+        vertical-align: top;
+        width: 45%;
+        /*margin: 20px 2.5%;*/
+        margin-bottom: 10px;
+        flex-grow: 1;
+        margin-right: 0px;
+    }
+
+    .ejercicio-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 470px;
+        margin: 0 auto 20px;
+        width: 100%;
+    }
+}
+
+
+.checkbox-wrapper {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+.checkbox-wrapper input {
+    display: none;
+}
+
+.checkbox-wrapper svg {
+    /*tamaño del checkbox*/
+    width: 50px;
+    height: 50px;
+    overflow: visible;
+    transition: transform 0.2s ease;
+    background-color: transparent;
+}
+
+.checkbox-wrapper:hover svg {
+    transform: scale(1.1);
+}
+
+.path {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+    stroke-dasharray: 241 9999999;
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper input:checked~svg .path {
+    stroke: steelblue;
+    stroke-dasharray: 70.5096664428711 9999999;
+    stroke-dashoffset: -262.2723388671875;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+.date-picker {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    /*centrado vertical*/
+    justify-content: center;
+    /*centrado horizontal*/
+    background: steelblue;
+    color: white;
+    border: none;
+    padding: 2px 12px 2px 12px;
+    border-radius: 12px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    /*centrado vertical*/
+    justify-content: center;
+    /*centrado horizontal*/
+    background-color: steelblue;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+
+.date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#current-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: steelblue;
+}
+
+#open-calendar {
+    padding: 12px 16px;
+    font-size: 20px;
+    align-items: center;
+    align-content: center;
+}
+
+
+.menu-desplegable {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 0px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    opacity: 0;
+    width: 100%;
+    max-width: 425px; /* Mismo ancho que el GIF */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.menu-desplegable.active {
+    padding: 15px;
+    margin-top: 15px;
+    max-height: 1000px;
+    overflow: visible;
+    opacity: 1;
+}
+
+.borg-scale {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.borg-item {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    background: #e9ecef;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.borg-item.selected {
+    background: black;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 767px) {
+    .borg-scale {
+        flex-direction: column;
+    }
+
+    .borg-item {
+        padding: 12px;
+    }
+
+    .ejercicio {
+        width: 95%;
+    }
+}
+
+
+.borg-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 8px 0 12px;
+    padding: 0 0px;
+}
+
+.borg-label {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: 500;
+    position: relative;
+}
+
+.borg-label:first-child::after {
+    content: "←";
+    margin-left: 5px;
+    color: #2a6ab7;
+}
+
+.borg-label:last-child::before {
+    content: "→";
+    margin-right: 5px;
+    color: #2a6ab7;
+}
+
+
+/* Para móviles */
+@media (max-width: 480px) {
+    .borg-labels {
+        font-size: 0.8em;
+        padding: 0 2px;
+    }
+
+    .borg-label:first-child::after,
+    .borg-label:last-child::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .ejercicio-container {
+        max-width: 95%;
+        padding: 0 10px;
+    }
+
+    .borg-scale {
+        flex-direction: row;
+    }
+}
+
+
+
+
+
+
+
+
+.menu {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .menu a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ejercicio img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.checkbox-wrapper {
+    top: 15px;
+    right: 15px;
+}
+
+@media (max-width: 480px) {
+    .checkbox-wrapper {
+        top: 10px;
+        right: 10px;
+    }
+
+    .checkbox-wrapper svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .pantalla {
+        padding: 15px;
+    }
+
+    .date-picker {
+        gap: 10px;
+    }
+
+    .nav-button {
+        padding: 5px 10px;
+        font-size: 1.2rem;
+    }
+}
+
+
+.header, .menu {
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho */
+}
+
+@media (max-width: 767px) {
+    .menu {
+        flex-wrap: nowrap;
+        /* Mantiene los ítems en una sola línea */
+        padding: 8px 5px;
+        /* Reduce espacio interno */
+    }
+
+    .menu a {
+        font-size: 0.85rem;
+        /* Tamaño más pequeño para móviles */
+        padding: 5px 8px;
+        /* Espaciado ajustado */
+        white-space: nowrap;
+        /* Previene saltos de línea */
+    }
+
+    .ejercicio {
+        max-width: 100%;
+        /* Asegura que no exceda el ancho de pantalla */
+        margin: 0 10px 20px;
+        /* Margen lateral en móviles */
+    }
+}
+
+
+.comentario {
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: #fff;
+    padding: 8px;
+    font-size: 14px;
+    width: 370px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin: 0 0 0 0;
+}
+
+.comentario:focus {
+    border: 2.3px solid rgb(165, 165, 165);
+    outline: none;
+}
+
+.btn2 {
+    display: inline-flex;
+    align-items: center;
+    /*centrado vertical*/
+    justify-content: center;
+    /*centrado horizontal*/
+    background-color: steelblue;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+    width: 100px;
+    height: 45px
+}
+
+
+.menu-desplegable h4 {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.button {
+    margin: 25px 0 0 0;
+}
+
+
+
+
+@media (max-width: 480px) {
+    .menu a {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .ejercicio img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+.comentario {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .menu-desplegable {
+        margin-top: 0px;
+    }
+
+    .borg-item {
+        padding: 10px 5px;
+    }
+}
+
+
+
+
+
+
+
+/* Ventana de inicio */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.servicio-card {
+    background: white;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Altura igual para todas */
+    width: 200px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-card.active {
+    transform: translateY(-10px);
+}
+
+
+.icono {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+}
+
+.servicio-card h3 {
+    color: steelblue;
+    margin: 5px 0;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    padding: 0 5px;
+}
+
+.servicio-card p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0 5px;
+}
+
+
+@media (max-width: 480px) {
+    .servicios-grid {
+        gap: 20px;
+        padding: 10px;
+
+        margin-top: 50px;
+    }
+    
+    .servicio-card {
+        min-height: 130px;
+        padding: 15px;
+
+        height: 150px;
+        width: 150px;
+    }
+    
+    .icono {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+    
+    .servicio-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .servicio-card p {
+        font-size: 1rem;
+    }
+}
