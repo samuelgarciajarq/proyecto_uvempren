@@ -90,3 +90,25 @@ document.querySelectorAll('.btn2').forEach(button => {
 if ('ontouchstart' in window) {
     document.body.classList.add('touch-device');
 }
+
+// Mejora la detección de toques
+document.querySelectorAll('.servicio-card').forEach(card => {
+    let isTouching = false;
+    
+    card.addEventListener('touchstart', () => {
+        isTouching = true;
+        card.style.transform = 'scale(0.92) translateY(3px)';
+    });
+
+    card.addEventListener('touchend', () => {
+        if(isTouching) {
+            isTouching = false;
+            card.style.transform = '';
+        }
+    });
+
+    // Prevención de toques fantasmas
+    card.addEventListener('touchmove', (e) => {
+        if(isTouching) e.preventDefault();
+    });
+});
