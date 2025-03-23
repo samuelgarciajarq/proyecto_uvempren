@@ -674,3 +674,7 @@ body {
         transform: none; /* Desactiva hover en móviles */
     }
 }
+
+.touch-device .servicio-card:hover {
+    transform: none !important;
+}
