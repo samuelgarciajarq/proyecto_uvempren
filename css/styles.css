@@ -628,12 +628,7 @@ body {
 
 /* Efecto al presionar */
 .servicio-card:active {
-    transform: scale(0.8) translateY(2px);
-}
-
-/* Mejora la animación hover */
-.servicio-card:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: scale(0.7) translateY(2px);
 }
 
 /* Añade una microinteracción al soltar */
