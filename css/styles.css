@@ -585,6 +585,18 @@ body {
 
 
 @media (max-width: 480px) {
+    .servicios-grid {
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .servicio-card {
+        padding: 15px;
+
+        height: 150px;
+        width: 150px;
+    }
+    
     .icono {
         width: 65px;
         height: 65px;
