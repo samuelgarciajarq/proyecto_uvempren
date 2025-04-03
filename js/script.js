@@ -112,3 +112,28 @@ document.querySelectorAll('.servicio-card').forEach(card => {
         if(isTouching) e.preventDefault();
     });
 });
+
+
+const video = document.getElementById('myVideo');
+const playButton = document.getElementById('playButton');
+
+// Controlar clic en el botón
+playButton.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        playButton.style.display = 'none';
+    } else {
+        video.pause();
+        playButton.style.display = 'block';
+    }
+});
+
+// Mostrar botón cuando el video se pause
+video.addEventListener('pause', () => {
+    playButton.style.display = 'block';
+});
+
+// Ocultar botón cuando se reproduce
+video.addEventListener('play', () => {
+    playButton.style.display = 'none';
+});

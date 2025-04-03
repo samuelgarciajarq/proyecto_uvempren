@@ -686,3 +686,50 @@ body {
         transform: translateY(-4px) scale(1.03);
     }
 }
+
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto; /* Centrado horizontal */
+    display: block; /* Cambia de inline-block a block */
+    max-width: 425px; /* Igual que las imágenes */
+    box-sizing: border-box; /* Incluye el borde en el ancho */
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box; /* Necesario por el borde */
+}
+
+.custom-play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(70, 130, 180, 0.8);
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-play-button:hover {
+    background: rgb(70, 130, 180, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+
+
+
