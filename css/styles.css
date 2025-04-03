@@ -104,8 +104,8 @@ body {
 
 .checkbox-wrapper {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 30px;
+    right: 30px;
     cursor: pointer;
     z-index: 10;
 }
